@@ -24,10 +24,11 @@ function App() {
 		} else (
 			setLocalStorage(cart)
 		)
-	},[cart])
+	},[])
 
 	const addItem = item => {
 		setCart([...cart, item]);
+		setLocalStorage([...cart, item])
 
 	};
 

@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext'
+import UseLocalStorage from './useLocalStorage'
 
 const Item = props => {
 
 	const { cart, setCart } = useContext(CartContext);
+	const [localStorage, setLocalStorage] = UseLocalStorage('cart')
 
 	const removeHandler = (item) => {
 		setCart(cart.filter(book => book.id !== item.id))
+		setLocalStorage(cart.filter(book => book.id !== item.id))
 		
 	}
 
